@@ -45,6 +45,11 @@
 <p>To participate in the ongoing discussion on <code>hostsblock</code>, check out its <a href="https://bbs.archlinux.org/viewtopic.php?id=139784">Arch Linux forum</a> or its <a href="https://aur.archlinux.org/packages.php?ID=58976">Arch User Repository page</a>.</p>
 
 <h5>
+<a name="version-0123-03062013" class="anchor" href="#version-0123-03062013"><span class="octicon octicon-link"></span></a>Version 0.12.3 (03.06.2013)</h5>
+
+<ul>
+<li>hostblock-urlcheck: issue with colored prompt on white-backgrounded terminals fixed</li>
+</ul><h5>
 <a name="version-0122-02062013" class="anchor" href="#version-0122-02062013"><span class="octicon octicon-link"></span></a>Version 0.12.2 (02.06.2013)</h5>
 
 <ul>
@@ -202,7 +207,7 @@ install -Dm644 hosts.head /etc/hostsblock/hosts.head
 <li>
 <p>Add the following to <code>/etc/dnsmasq.conf</code>:</p>
 
-<pre><code>hostsfile="/etc/hosts.block" 
+<pre><code>addn-hosts=/etc/hosts.block
 </code></pre>
 
 <pre><code>postprocess(){ 
@@ -210,7 +215,7 @@ systemctl restart dnsmasq.service
 }
 </code></pre>
 
-<p>Where "systemctl restart dnsmasq.server" is your system's command to restart <code>dnsmasq</code>.</p>
+<p>Where "systemctl restart dnsmasq.service" is your system's command to restart <code>dnsmasq</code>.</p>
 </li>
 </ol><p>From now on, whenever <code>hostsblock</code> runs, or if <code>hostsblock-urlcheck</code> makes changes, <code>dnsmasq</code> will automatically be restarted.</p>
 
